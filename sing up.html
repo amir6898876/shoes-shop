@@ -1,31 +1,34 @@
 <!doctype html>
-<html lang="en">
+<html lang="fa">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ورود و ثبت نام داخل شوز شاپ در سال1404</title>
+    <title>ورود به شوز شاپ</title>
     <link rel="stylesheet" href="sing up.css" />
   </head>
-
   <body dir="rtl">
-    <div class="blur">
-      <form>
-        <label class="labelinput">نام کاربری</label>
-        <input type="text" placeholder="نام کاربری" />
-        <br />
-        <label class="labelinput">رمز عبور</label>
-        <input type="password" placeholder="رمز عبور" />
-        <br />
-        <label class="labelcheck"> مرا بخاطر بسپار</label>
-        <input type="checkbox" />
-        <br />
-        <button type="button" class="submit">ورود</button>
+    <div class="container">
+      <div class="blur">
+        <form>
+          <label class="labelinput">نام کاربری</label>
+          <input type="text" placeholder="نام کاربری خود را وارد کنید" />
 
-      </form>
+          <label class="labelinput">رمز عبور</label>
+          <input type="password" placeholder="رمز عبور خود را وارد کنید" />
 
-      <h4>
-        حساب کاربری ندارید؟<span><a href="login.html">ایجاد حساب</a></span>
-      </h4>
+          <div class="checkbox-container">
+            <input type="checkbox" id="remember" />
+            <label class="labelcheck" for="remember">مرا بخاطر بسپار</label>
+          </div>
+
+          <button type="button" class="submit">ورود</button>
+        </form>
+
+        <h4>
+          حساب کاربری ندارید؟
+          <span><a href="login.html">ایجاد حساب</a></span>
+        </h4>
+      </div>
     </div>
     <script src="sing up.js"></script>
   </body>

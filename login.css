@@ -1,212 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IRANSans', system-ui, -apple-system, sans-serif;
+}
+
 body {
-    background: linear-gradient(to right, rgb(243, 230, 255), rgb(224, 185, 255), rgb(245, 221, 255));
-}
-
-form {
-    margin: auto;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 50vh;
+    justify-content: center;
+    padding: 20px;
+    direction: rtl;
 }
 
-input,
-label {
-    margin-top: 8px;
-    font-size: 17px;
+/* کانتینر اصلی */
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
+/* کارت ثبت‌نام */
 .row {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 40px;
-    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.6s ease;
+    width: 100%;
+}
+
+/* فرم */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
     text-align: center;
-    animation: row 0.8s linear;
-    width: 50%;
-    margin: auto;
-    margin-top: 40px;
+    position: relative;
 }
 
-@keyframes row {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    margin: 15px auto 0;
+    border-radius: 2px;
 }
 
-
-button {
-    margin-top: 15px;
-    width: 100px;
-    padding: 10px;
-    font-size: 18px;
-    background-color: rgb(229, 201, 255);
-    border: 0.5px solid rgb(233, 161, 255);
-    cursor: pointer;
-    transition: 1s;
+/* لیبل‌ها */
+label {
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: right;
 }
 
-button:hover {
-    color: white;
-    background-color: purple;
-    transform: translateY(-10px);
-    padding: 5px;
-    box-shadow: 0 5px 10px gray;
-}
-
+/* اینپوت‌ها */
 input {
-    padding: 5px;
-    border-radius: 10px;
-    border: 0.7px solid gray;
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: white;
+    direction: rtl;
 }
 
-a {
-    text-decoration: none;
-    color: purple;
+input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* بخش قوانین */
+.rule {
+    margin: 25px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.label-ruls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 !important;
+    font-size: 15px;
     cursor: pointer;
 }
 
-a:hover {
-    border-bottom: 4px solid purple;
+.label-ruls a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-@media screen and (min-width:768px) {
-    input {
-        width: 50%;
-    }
-
-    .img {
-        background-image: url('vecteezy_trendy-winged-shoes_52935460.png');
-        background-size: 200px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        min-height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        /* عکس پشت همه چیز قرار گیرد */
-
-    }
+.label-ruls a:hover {
+    text-decoration: underline;
 }
 
-/* گزارش/درست بودن */
-.allow {
-    display: none;
-    padding: 15px;
-    border: 3px solid red;
-    border-bottom: 7px solid red;
-    border-radius: 13px;
-    float: right;
-    width: 270px;
-    background-color: red;
-    animation: allow 0.4s linear;
+#checkbox {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
 }
-@keyframes allow {
-    from{transform: translateX(100%);}
-    to{transform: translateX(0);}
+
+/* دکمه ثبت‌نام */
+#btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 0 20px;
+}
+
+#btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+#btn:active {
+    transform: translateY(0);
+}
+
+/* لینک ورود */
+h3 {
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+h3 a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+h3 a:hover {
+    text-decoration: underline;
+}
+
+/* بخش پیام‌های خطا */
+.errorall {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    pointer-events: none;
 }
 
 .error {
     display: flex;
     flex-direction: column;
-}
-
-.img {
-    background-image: url('vecteezy_trendy-winged-shoes_52935460.png');
-    background-size: 90%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    min-height: 100vh;
+    gap: 10px;
     width: 100%;
-    z-index: -1;
-    /* عکس پشت همه چیز قرار گیرد */
-
-}
-.rule {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+    max-width: 350px;
 }
 
-.label-ruls {
-    margin: 0 !important;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.allow {
+    display: none;
+    padding: 12px 20px;
+    background: #ff4757;
+    color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    animation: slideInLeft 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 71, 87, 0.3);
+    direction: rtl;
+    width: 100%;
 }
 
-.rule input[type="checkbox"] {
-    margin: 0;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
+/* انیمیشن‌ها */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* برای موبایل */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ریسپانسیو برای موبایل */
 @media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .row {
+        padding: 25px 20px;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+    
+    input {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    label {
+        font-size: 14px;
+    }
+    
     .rule {
-        flex-direction: row;
-        flex-wrap: wrap;
+        margin: 20px 0 15px;
     }
     
     .label-ruls {
         font-size: 14px;
     }
-}
-/* استایل برای جستجوگر */
-.search-filter-container {
-    background: white;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    margin-top: 30px;
-}
-
-#searchInput:focus {
-    border-color: purple !important;
-    box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.1);
-}
-
-#filterSelect:focus {
-    border-color: purple !important;
-    box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.1);
-}
-
-/* انیمیشن برای محصولات فیلتر شده */
-.colcard {
-    transition: all 0.3s ease;
-}
-
-.colcard[style*="display: none"] {
-    display: none !important;
-}
-
-/* پیام خطا برای محصولات پیدا نشده */
-#productCount {
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(128, 0, 128, 0.05);
-}
-
-/* برای موبایل */
-@media (max-width: 768px) {
-    .search-filter-container div {
-        flex-direction: column;
+    
+    #btn {
+        padding: 12px;
+        font-size: 15px;
     }
     
-    #searchInput, #filterSelect, .search-filter-container button {
-        width: 100%;
-        margin: 5px 0;
+    h3 {
+        font-size: 14px;
+    }
+    
+    .error {
+        max-width: 100%;
+    }
+    
+    .allow {
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .row {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+    
+    h1::after {
+        width: 50px;
+        height: 3px;
+    }
+    
+    .rule {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .label-ruls {
+        font-size: 13px;
     }
 }

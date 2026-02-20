@@ -1,0 +1,118 @@
+        * {
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, rgb(152, 0, 152), purple, rgb(94, 0, 94));
+        }
+
+        .blur {
+            background: rgba(212, 212, 212, 0.5);
+            width: 50%;
+            margin: auto;
+            height: auto;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .labelinput {
+            font-size: 18px;
+            font-weight: bolder;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        input[type='checkbox'] {
+            position: relative;
+            top: -20px;
+            left: -20%;
+        }
+
+        @media screen and (max-width:994px) {
+            input {
+                width: 80%;
+                margin: auto;
+            }
+
+            .labelcheck {
+                text-align: center;
+                position: relative;
+                right: -30px;
+                height: 15px;
+            }
+
+            .submit {
+                width: 50%;
+            }
+            .not-robot{
+                text-align: center;
+        }
+        }
+
+        @media screen and (min-width:995px) {
+            input {
+                width: 50%;
+                margin: auto;
+            }
+
+            .labelcheck {
+                position: relative;
+                left: -30%;
+            }
+            .submit{
+                width: 40%;
+                height: 60px;
+                
+            }
+            .not-robot{
+                text-align: center;
+        }
+        }
+
+        input {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            height: 30px;
+            padding-right: 20px;
+            font-size: 16px;
+            color: black;
+            border-radius: 13px;
+        }
+
+        .submit {
+            background: linear-gradient(45deg, purple, rgb(177, 0, 177));
+            color: white;
+            padding-bottom: 20px;
+            border-radius: 15px;
+            padding-right: 10px;
+            text-align: center;
+            margin: auto;
+            padding-left: 10px;
+        }
+
+        .submit:hover {
+            background: linear-gradient(45deg, rgb(177, 0, 177), purple);
+        }
+
+        a {
+            text-decoration: none;
+        }
+        .robot-col{
+            display: flex;
+            justify-content: center;
+        }
+        .robot{
+            width: 100px;
+            padding: 5px;
+            background-color: plum;
+            border-radius: 15px;
+            border: 0.7px solid salmon;
+            font-size: 18px;
+            padding-bottom: 10px;
+        }

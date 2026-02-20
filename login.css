@@ -1,0 +1,212 @@
+body {
+    background: linear-gradient(to right, rgb(243, 230, 255), rgb(224, 185, 255), rgb(245, 221, 255));
+}
+
+form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+}
+
+input,
+label {
+    margin-top: 8px;
+    font-size: 17px;
+}
+
+.row {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 18px;
+    text-align: center;
+    animation: row 0.8s linear;
+    width: 50%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+@keyframes row {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+button {
+    margin-top: 15px;
+    width: 100px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: rgb(229, 201, 255);
+    border: 0.5px solid rgb(233, 161, 255);
+    cursor: pointer;
+    transition: 1s;
+}
+
+button:hover {
+    color: white;
+    background-color: purple;
+    transform: translateY(-10px);
+    padding: 5px;
+    box-shadow: 0 5px 10px gray;
+}
+
+input {
+    padding: 5px;
+    border-radius: 10px;
+    border: 0.7px solid gray;
+}
+
+a {
+    text-decoration: none;
+    color: purple;
+    cursor: pointer;
+}
+
+a:hover {
+    border-bottom: 4px solid purple;
+}
+
+@media screen and (min-width:768px) {
+    input {
+        width: 50%;
+    }
+
+    .img {
+        background-image: url('vecteezy_trendy-winged-shoes_52935460.png');
+        background-size: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        /* عکس پشت همه چیز قرار گیرد */
+
+    }
+}
+
+/* گزارش/درست بودن */
+.allow {
+    display: none;
+    padding: 15px;
+    border: 3px solid red;
+    border-bottom: 7px solid red;
+    border-radius: 13px;
+    float: right;
+    width: 270px;
+    background-color: red;
+    animation: allow 0.4s linear;
+}
+@keyframes allow {
+    from{transform: translateX(100%);}
+    to{transform: translateX(0);}
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+}
+
+.img {
+    background-image: url('vecteezy_trendy-winged-shoes_52935460.png');
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 100vh;
+    width: 100%;
+    z-index: -1;
+    /* عکس پشت همه چیز قرار گیرد */
+
+}
+.rule {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.label-ruls {
+    margin: 0 !important;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.rule input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* برای موبایل */
+@media screen and (max-width: 768px) {
+    .rule {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .label-ruls {
+        font-size: 14px;
+    }
+}
+/* استایل برای جستجوگر */
+.search-filter-container {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+#searchInput:focus {
+    border-color: purple !important;
+    box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.1);
+}
+
+#filterSelect:focus {
+    border-color: purple !important;
+    box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.1);
+}
+
+/* انیمیشن برای محصولات فیلتر شده */
+.colcard {
+    transition: all 0.3s ease;
+}
+
+.colcard[style*="display: none"] {
+    display: none !important;
+}
+
+/* پیام خطا برای محصولات پیدا نشده */
+#productCount {
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(128, 0, 128, 0.05);
+}
+
+/* برای موبایل */
+@media (max-width: 768px) {
+    .search-filter-container div {
+        flex-direction: column;
+    }
+    
+    #searchInput, #filterSelect, .search-filter-container button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

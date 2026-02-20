@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>شمارنده</title>
+    <style>
+        .checkbox-animaion{
+            animation: div 2s linear forwards;
+        }
+        @keyframes div {
+            from{transform: translateX(100%);}
+            to{transform: translateX(0);}
+        }
+    </style>
+  </head>
+  <body>
+    <form action="">
+        <input type="text" id="input">
+    </form>
+    <p id="1">a</p>
+    <p id="2">b</p>
+    <p id="3">c</p>
+    <button id="btn">click</button>
+
+    <script>
+        const input = document.getElementById('input');
+        const a = document.getElementById('1');
+        const b = document.getElementById('2');
+        const c = document.getElementById('3');
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', function(){
+            if(input.value === 'بسکتبال'){
+                
+            }
+        })
+    </script>
+  </body>
+</html>

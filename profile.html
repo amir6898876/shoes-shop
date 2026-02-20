@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>پروفایل کاربری | شوز شاپ</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- منوی دسکتاپ -->
+    <nav class="desktop-menu" dir="rtl">
+      <ul class="desktop-nav">
+        <li><a href="index.html">صفحه اصلی</a></li>
+        <li>
+          <a href="#" id="desktopProfileLink" class="profile-link"
+            >پروفایل من</a
+          >
+        </li>
+        <li><a href="index.html#servis">محصولات</a></li>
+        <li><a href="index.html#help">راهنمایی</a></li>
+        <li><a href="index.html#about">درباره ما</a></li>
+        <li><a href="index.html#contact">تماس با ما</a></li>
+      </ul>
+    </nav>
+
+    <!-- منوی همبرگری -->
+    <div class="hamburger-btn" id="hamburgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="menu-container" id="menuContainer" dir="rtl">
+      <div class="menu-header">
+        <div class="menu-title">منوی سایت</div>
+      </div>
+      <ul class="menu-items">
+        <li><a href="index.html">صفحه اصلی</a></li>
+        <li>
+          <a href="#" id="mobileProfileLink" class="profile-link">پروفایل من</a>
+        </li>
+        <li><a href="index.html#servis">محصولات</a></li>
+        <li><a href="index.html#help">راهنمایی</a></li>
+        <li><a href="index.html#about">درباره ما</a></li>
+        <li><a href="index.html#contact">تماس با ما</a></li>
+        <li>
+          <a href="#" id="logoutLink" class="logout-link">خروج از حساب</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- محتوای اصلی پروفایل -->
+    <div class="profile-container">
+      <div class="profile-header">
+        <div class="profile-cover">
+          <div class="profile-avatar">
+            <img src="default-avatar.png" alt="avatar" id="profileAvatar" />
+            <div class="avatar-upload">
+              <i class="fas fa-camera"></i>
+              <input type="file" id="avatarUpload" accept="image/*" />
+            </div>
+          </div>
+          <div class="profile-title">
+            <h1 id="profileName">کاربر مهمان</h1>
+            <p class="profile-email" id="profileEmail">example@email.com</p>
+          </div>
+          <button class="edit-profile-btn" id="editProfileBtn">
+            <i class="fas fa-edit"></i> ویرایش پروفایل
+          </button>
+        </div>
+      </div>
+      <!-- تو بخش هدر پروفایل، بعد از دکمه ویرایش پروفایل -->
+      <div class="profile-actions">
+        <button class="edit-profile-btn" id="editProfileBtn">
+          <i class="fas fa-edit"></i> ویرایش پروفایل
+        </button>
+        <button class="logout-profile-btn" id="logoutProfileBtn">
+          <i class="fas fa-sign-out-alt"></i> خروج از حساب
+        </button>
+      </div>
+
+      <!-- تب‌های پروفایل -->
+      <div class="profile-tabs">
+        <button class="tab-btn active" data-tab="dashboard">
+          <i class="fas fa-tachometer-alt"></i> داشبورد
+        </button>
+        <button class="tab-btn" data-tab="orders">
+          <i class="fas fa-shopping-bag"></i> سفارشات
+        </button>
+        <button class="tab-btn" data-tab="wishlist">
+          <i class="fas fa-heart"></i> علاقه‌مندی‌ها
+        </button>
+        <button class="tab-btn" data-tab="addresses">
+          <i class="fas fa-map-marker-alt"></i> آدرس‌ها
+        </button>
+        <button class="tab-btn" data-tab="settings">
+          <i class="fas fa-cog"></i> تنظیمات
+        </button>
+      </div>
+
+      <!-- محتوای تب‌ها -->
+      <div class="tab-content">
+        <!-- داشبورد -->
+        <div class="tab-pane active" id="dashboard">
+          <div class="dashboard-stats">
+            <div class="stat-card">
+              <i class="fas fa-shopping-bag"></i>
+              <div class="stat-info">
+                <span class="stat-value" id="totalOrders">0</span>
+                <span class="stat-label">کل سفارشات</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-check-circle"></i>
+              <div class="stat-info">
+                <span class="stat-value" id="completedOrders">0</span>
+                <span class="stat-label">تکمیل شده</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-heart"></i>
+              <div class="stat-info">
+                <span class="stat-value" id="wishlistCount">0</span>
+                <span class="stat-label">علاقه‌مندی‌ها</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-clock"></i>
+              <div class="stat-info">
+                <span class="stat-value" id="pendingOrders">0</span>
+                <span class="stat-label">در انتظار</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- آخرین سفارشات -->
+          <div class="recent-orders">
+            <h3>آخرین سفارشات</h3>
+            <div class="orders-list" id="recentOrdersList">
+              <!-- لیست سفارشات با جاوااسکریپت پر می‌شود -->
+            </div>
+          </div>
+        </div>
+
+        <!-- سفارشات -->
+        <div class="tab-pane" id="orders">
+          <h3>سفارشات من</h3>
+          <div class="orders-filter">
+            <button class="filter-btn active" data-filter="all">همه</button>
+            <button class="filter-btn" data-filter="pending">در انتظار</button>
+            <button class="filter-btn" data-filter="processing">
+              در حال پردازش
+            </button>
+            <button class="filter-btn" data-filter="completed">
+              تکمیل شده
+            </button>
+            <button class="filter-btn" data-filter="cancelled">لغو شده</button>
+          </div>
+          <div class="orders-grid" id="allOrders">
+            <!-- سفارشات با جاوااسکریپت پر می‌شود -->
+          </div>
+        </div>
+
+        <!-- علاقه‌مندی‌ها -->
+        <div class="tab-pane" id="wishlist">
+          <h3>محصولات مورد علاقه</h3>
+          <div class="wishlist-grid" id="wishlistItems">
+            <!-- محصولات مورد علاقه با جاوااسکریپت پر می‌شود -->
+          </div>
+        </div>
+
+        <!-- آدرس‌ها -->
+        <div class="tab-pane" id="addresses">
+          <div class="addresses-header">
+            <h3>آدرس‌های من</h3>
+            <button class="add-address-btn" id="addAddressBtn">
+              <i class="fas fa-plus"></i> افزودن آدرس جدید
+            </button>
+          </div>
+          <div class="addresses-grid" id="addressesList">
+            <!-- آدرس‌ها با جاوااسکریپت پر می‌شود -->
+          </div>
+        </div>
+
+        <!-- تنظیمات -->
+        <div class="tab-pane" id="settings">
+          <h3>تنظیمات حساب کاربری</h3>
+          <form class="settings-form" id="settingsForm">
+            <div class="form-group">
+              <label for="fullName">نام و نام خانوادگی</label>
+              <input
+                type="text"
+                id="fullName"
+                class="form-control"
+                placeholder="نام خود را وارد کنید"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">ایمیل</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="ایمیل خود را وارد کنید"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">شماره همراه</label>
+              <input
+                type="tel"
+                id="phone"
+                class="form-control"
+                placeholder="شماره همراه خود را وارد کنید"
+              />
+            </div>
+            <div class="form-group">
+              <label for="currentPassword">رمز عبور فعلی</label>
+              <input
+                type="password"
+                id="currentPassword"
+                class="form-control"
+                placeholder="رمز عبور فعلی"
+              />
+            </div>
+            <div class="form-group">
+              <label for="newPassword">رمز عبور جدید</label>
+              <input
+                type="password"
+                id="newPassword"
+                class="form-control"
+                placeholder="رمز عبور جدید"
+              />
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">تکرار رمز عبور جدید</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                class="form-control"
+                placeholder="تکرار رمز عبور جدید"
+              />
+            </div>
+            <button type="submit" class="save-settings-btn">
+              ذخیره تغییرات
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- مودال افزودن آدرس -->
+    <div class="modal" id="addressModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>افزودن آدرس جدید</h3>
+          <button class="close-modal" id="closeAddressModal">&times;</button>
+        </div>
+        <form id="addressForm">
+          <div class="form-group">
+            <label for="addressTitle">عنوان آدرس</label>
+            <input
+              type="text"
+              id="addressTitle"
+              class="form-control"
+              placeholder="مثلاً: خانه، محل کار"
+            />
+          </div>
+          <div class="form-group">
+            <label for="receiverName">نام گیرنده</label>
+            <input
+              type="text"
+              id="receiverName"
+              class="form-control"
+              placeholder="نام گیرنده"
+            />
+          </div>
+          <div class="form-group">
+            <label for="receiverPhone">شماره تماس</label>
+            <input
+              type="tel"
+              id="receiverPhone"
+              class="form-control"
+              placeholder="شماره تماس گیرنده"
+            />
+          </div>
+          <div class="form-group">
+            <label for="province">استان</label>
+            <select id="province" class="form-control">
+              <option value="">انتخاب استان</option>
+              <option value="tehran">تهران</option>
+              <option value="isfahan">اصفهان</option>
+              <option value="shiraz">شیراز</option>
+              <option value="mashhad">مشهد</option>
+              <option value="tabriz">تبریز</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="city">شهر</label>
+            <input
+              type="text"
+              id="city"
+              class="form-control"
+              placeholder="شهر"
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">آدرس کامل</label>
+            <textarea
+              id="address"
+              class="form-control"
+              rows="3"
+              placeholder="آدرس کامل"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="postalCode">کد پستی</label>
+            <input
+              type="text"
+              id="postalCode"
+              class="form-control"
+              placeholder="کد پستی"
+            />
+          </div>
+          <button type="submit" class="save-address-btn">ذخیره آدرس</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="profile.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

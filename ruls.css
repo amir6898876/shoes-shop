@@ -1,0 +1,54 @@
+@font-face {
+    font-family: yekan;
+    src: url(B\ Yekan\ Plus\ Bold.ttf);
+    src: url(B\ Yekan\ Plus\ Regular.ttf);
+}
+body{
+    background-color: rgb(224, 194, 252);
+    font-family: yekan;
+}
+h1 {
+    border-bottom: 10px solid purple;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 15px;
+}
+
+li,
+p {
+    width: 70%;
+    margin: auto;
+    line-height: 35px;
+    font-size: 19px;
+}
+
+p {
+    margin-top: 10px;
+}
+
+h2 {
+
+    border: 5px solid purple;
+    border-bottom: 9px solid purple;
+    padding-top: 10px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}
+.color{
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+@media screen and (min-width:768px) {
+    h3{
+        margin-right: 100px;
+    }
+}

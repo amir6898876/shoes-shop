@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+
+  <body dir="rtl">
+    <!-- گزارش/درست بودن -->
+    <div class="errorall">
+      <div class="error">
+        <h2 class="allow" id="allow"></h2>
+        <h2 class="allow" id="allowpass"></h2>
+        <h2 class="allow" id="allowagain"></h2>
+        <h2 class="allow" id="allowemail"></h2>
+        <h2 class="allow" id="allowtel"></h2>
+        <h2 class="allow" id="allowcheck"></h2>
+      </div>
+    </div>
+
+    <div class="img">
+      <div class="row">
+        <!-- فرم -->
+        <form>
+          <h1>ثبت نام در شوز شاپ</h1>
+          <label>نام کاربری:</label>
+          <input id="user" type="text" placeholder="نام کاربری" />
+          <label>رمز عبور:</label>
+          <input id="password" type="password" placeholder="رمز عبور" />
+          <label>تکرار رمز عبور:</label>
+          <input
+            id="againpassword"
+            type="password"
+            placeholder="تکرار رمز عبور"
+          />
+          <label>ایمیل:</label>
+          <input id="email" type="email" placeholder="shoes-shop22@gmail.com" />
+          <label>شماره همراه:</label>
+          <input id="tel" type="tel" dir="rtl" placeholder="09123456789" />
+        </form>
+        <div class="rule">       
+             <label for="checkbox" class="label-ruls"> <a href="rules.html">قوانین</a> را خوانده ام </label>
+
+        <input type="checkbox" id="checkbox" />  
+        </div>
+
+
+        <button id="btn">ثبت نام</button>
+        <h3>حساب کاربری دارم: <a href="sing up.html">ورود</a></h3>
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

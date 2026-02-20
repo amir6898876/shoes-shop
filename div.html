@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوالات متداول | شوز شاپ</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* استایل بخش FAQ - کاملاً مستقل */
+        .shoeshop-faq-wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .shoeshop-faq-container {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+            border-radius: 40px;
+            padding: 50px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .shoeshop-faq-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .shoeshop-faq-header h2 {
+            font-size: 2.8em;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .shoeshop-faq-header h2 span {
+            color: #a866ff;
+        }
+
+        .shoeshop-faq-header p {
+            color: #4a4a4a;
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .shoeshop-faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .shoeshop-faq-item {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eaeaea;
+            transition: all 0.3s ease;
+        }
+
+        .shoeshop-faq-item:hover {
+            border-color: #9d73d4;
+            box-shadow: 0 8px 30px rgba(212, 163, 115, 0.1);
+        }
+
+        .shoeshop-faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            user-select: none;
+        }
+
+        .shoeshop-faq-question h3 {
+            font-size: 1.2em;
+            color: #1a1a1a;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            margin: 0;
+        }
+
+        .shoeshop-faq-question h3::before {
+            content: '';
+            font-size: 1.3em;
+            opacity: 0.7;
+        }
+
+        .shoeshop-faq-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f3f3;
+            border-radius: 50%;
+            color: #9d73d4;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+
+        .shoeshop-faq-item.active .shoeshop-faq-icon {
+            background: #c073d4;
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        .shoeshop-faq-answer {
+            max-height: 0;
+            padding: 0 30px;
+            overflow: hidden;
+            background: #fafafa;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 1px solid transparent;
+        }
+
+        .shoeshop-faq-item.active .shoeshop-faq-answer {
+            max-height: 300px;
+            padding: 25px 30px;
+            border-top-color: #eaeaea;
+        }
+
+        .shoeshop-faq-answer p {
+            color: #4a4a4a;
+            line-height: 1.8;
+            font-size: 1.05em;
+            margin: 0;
+        }
+
+        .shoeshop-faq-answer ul {
+            margin: 15px 0 5px 20px;
+            color: #4a4a4a;
+            line-height: 1.8;
+        }
+
+        .shoeshop-faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        .shoeshop-faq-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px dashed #eaeaea;
+        }
+
+        .shoeshop-faq-footer p {
+            color: #4a4a4a;
+            font-size: 1.1em;
+        }
+
+        .shoeshop-faq-footer a {
+            color: #9873d4;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #ab73d4;
+            padding-bottom: 2px;
+        }
+
+        .shoeshop-faq-footer a:hover {
+            color: #8f5cb6;
+            border-bottom-color: #000000;
+        }
+        .svg{
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .r5,.r4{
+             animation: svg 1s linear forwards;
+             display: none;
+        }
+        .l1,.l2{
+          animation: svg3 1s linear forwards; 
+          display: none; 
+        }
+        .c3{
+            animation: svg2 1s linear forwards;
+            display: none;
+        }
+        .svg a{
+            text-decoration: none;
+        }
+        @keyframes svg {
+            from{position: relative;left: -400px;}
+            to{position: relative;left: 0;}
+        }
+        @keyframes svg2 {
+            from{position: relative;top: 400px;opacity: 0;}
+            to{position: relative;top: 0;opacity: 1;}
+        }
+        @keyframes svg3 {
+            from{position: relative;right: -400px;}
+            to{position: relative;right: 0;}
+        }
+        @media (max-width: 768px) {
+            .shoeshop-faq-container {
+                padding: 30px 20px;
+            }
+            
+            .shoeshop-faq-header h2 {
+                font-size: 2em;
+            }
+            
+            .shoeshop-faq-question {
+                padding: 20px;
+            }
+            
+            .shoeshop-faq-question h3 {
+                font-size: 1em;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="shoeshop-faq-wrapper">
+        <div class="shoeshop-faq-container">
+            <!-- هدر بخش FAQ -->
+            <div class="shoeshop-faq-header">
+                <h2>
+                    سوالات <span>متداول</span>
+                </h2>
+                <p>پاسخ به سوالات رایج شما درباره خرید از شوز شاپ</p>
+            </div>
+
+            <!-- لیست سوالات متداول -->
+            <div class="shoeshop-faq-grid" id="shoeshopFaqList">
+                <!-- سوال 1 -->
+                <div class="shoeshop-faq-item">
+                    <div class="shoeshop-faq-question">
+                        <h3>چگونه می‌توانم سفارش خود را پیگیری کنم؟</h3>
+                        <span class="shoeshop-faq-icon">+</span>
+                    </div>
+                    <div class="shoeshop-faq-answer">
+                        <p>پس از ثبت سفارش، کد رهگیری از طریق پیامک برای شما ارسال می‌شود. همچنین می‌توانید با ورود به حساب کاربری خود، از بخش "پیگیری سفارشات" وضعیت سفارش خود را مشاهده کنید.</p>
+                    </div>
+                </div>
+
+                <!-- سوال 2 -->
+                <div class="shoeshop-faq-item">
+                    <div class="shoeshop-faq-question">
+                        <h3>مدت زمان ارسال سفارش چقدر است؟</h3>
+                        <span class="shoeshop-faq-icon">+</span>
+                    </div>
+                    <div class="shoeshop-faq-answer">
+                        <p>سفارشات تهران ۱ تا ۳ روز کاری و شهرستان‌ها ۳ تا ۵ روز کاری تحویل داده می‌شوند. برای شهرهای دارای پست ویژه، امکان تحویل ۲۴ ساعته نیز وجود دارد.</p>
+                    </div>
+                </div>
+
+                <!-- سوال 3 -->
+                <div class="shoeshop-faq-item">
+                    <div class="shoeshop-faq-question">
+                        <h3>شرایط بازگرداندن کالا چگونه است؟</h3>
+                        <span class="shoeshop-faq-icon">+</span>
+                    </div>
+                    <div class="shoeshop-faq-answer">
+                        <p>تا ۷ روز پس از دریافت سفارش، در صورت عدم استفاده و سالم بودن محصول، امکان بازگرداندن وجود دارد. هزینه بازگرداندن در صورت مشکل دار بودن محصول بر عهده شوز شاپ است.</p>
+                        <ul>
+                            <li>محصول باید در بسته‌بندی اصلی باشد</li>
+                            <li>برچسب‌ها و لیبل‌ها نباید جدا شده باشند</li>
+                            <li>کفش‌ها نباید استفاده شده باشند</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- سوال 4 -->
+                <div class="shoeshop-faq-item">
+                    <div class="shoeshop-faq-question">
+                        <h3>چگونه سایز مناسب را انتخاب کنم؟</h3>
+                        <span class="shoeshop-faq-icon">+</span>
+                    </div>
+                    <div class="shoeshop-faq-answer">
+                        <p>در صفحه هر محصول، جدول تبدیل سایز قرار داده شده است. همچنین می‌توانید از راهنمای سایز در منوی اصلی استفاده کنید. در صورت نیاز، کارشناسان ما شما را راهنمایی می‌کنند.</p>
+                    </div>
+                </div>
+
+                <!-- سوال 5 -->
+                <div class="shoeshop-faq-item">
+                    <div class="shoeshop-faq-question">
+                        <h3>روش‌های پرداخت کدامند؟</h3>
+                        <span class="shoeshop-faq-icon">+</span>
+                    </div>
+                    <div class="shoeshop-faq-answer">
+                        <p>شما می‌توانید به روش‌های زیر پرداخت کنید:</p>
+                        <ul>
+                            <li>پرداخت آنلاین با تمام کارت‌های عضو شتاب</li>
+                            <li>پرداخت در محل با کارت بانکی</li>
+                            <li>پرداخت نقدی در محل (فقط برای تهران)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- سوال 6 -->
+                <div class="shoeshop-faq-item">
+                    <div class="shoeshop-faq-question">
+                        <h3>آیا امکان خرید عمده وجود دارد؟</h3>
+                        <span class="shoeshop-faq-icon">+</span>
+                    </div>
+                    <div class="shoeshop-faq-answer">
+                        <p>بله، برای خریدهای بالای ۵ جفت، تخفیف ویژه در نظر گرفته شده است. برای هماهنگی با بخش فروش سازمانی با شماره ۰۲۱-۱۲۳۴۵۶۷۸ تماس بگیرید.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- فوتر بخش FAQ -->
+            <div class="shoeshop-faq-footer">
+                <p>پاسخ سوال خود را پیدا نکردید؟ <a href="#" id="call">با ما تماس بگیرید</a></p>
+            </div>
+        </div>
+        <div class="svg">
+    <a href="#"><i id="l1" class="fab fa-telegram footer l1" style="font-size: 40px; color: #0088cc;"></i></a>
+    <a href="#"><i id="l2" class="fab fa-twitter footer l2" style="font-size: 40px; color: #000000;"></i></a>
+    <a href="#"><i id="c3" class="fab fa-youtube footer c3" style="font-size: 40px; color: #ff0000;"></i></a>
+    <a href="#"><i id="r4" class="fab fa-instagram footer r4" style="font-size: 40px; color: #e4405f;"></i></a>
+    <a href="#"><i id="r5" class="fab fa-linkedin footer r5" style="font-size: 40px; color: #0077b5;"></i></a>
+</div>
+    </div>
+
+    <!-- جاوااسکریپت مستقل برای FAQ - بدون تداخل با script.js -->
+    <script>
+        (function() {
+            // این تابع بلافاصله اجرا می‌شود و با کدهای دیگر تداخل ندارد
+            document.addEventListener('DOMContentLoaded', function() {
+                // انتخاب تمام آیتم‌های FAQ
+                const faqItems = document.querySelectorAll('.shoeshop-faq-item');
+                
+                // اضافه کردن رویداد کلیک به هر آیتم
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.shoeshop-faq-question');
+                    
+                    question.addEventListener('click', function(e) {
+                        // جلوگیری از نفوذ رویداد به عناصر دیگر
+                        e.stopPropagation();
+                        
+                        // بستن سایر آیتم‌های باز
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item && otherItem.classList.contains('active')) {
+                                otherItem.classList.remove('active');
+                            }
+                        });
+                        
+                        // باز و بسته کردن آیتم فعلی
+                        item.classList.toggle('active');
+                    });
+                });
+
+                // باز کردن اولین آیتم به صورت پیش‌فرض (اختیاری)
+                // if (faqItems.length > 0) {
+                //     faqItems[0].classList.add('active');
+                // }
+            });
+
+            // اضافه کردن استایل داینامیک برای اطمینان از عدم تداخل
+            const style = document.createElement('style');
+            style.textContent = `
+                /* استایل‌های اختصاصی FAQ - تضمین عدم تداخل */
+                .shoeshop-faq-item.active .shoeshop-faq-question h3 {
+                    color: #d4a373;
+                }
+                
+                .shoeshop-faq-item.active .shoeshop-faq-question h3::before {
+                    opacity: 1;
+                }
+                
+                .shoeshop-faq-answer p:last-child,
+                .shoeshop-faq-answer ul:last-child {
+                    margin-bottom: 0;
+                }
+                
+                @keyframes shoeshopFadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                .shoeshop-faq-item.active .shoeshop-faq-answer p,
+                .shoeshop-faq-item.active .shoeshop-faq-answer ul {
+                    animation: shoeshopFadeIn 0.4s ease forwards;
+                }
+            `;
+            document.head.appendChild(style);
+        })();
+        const l1 = document.getElementById('l1');
+        const l2 = document.getElementById('l2');
+        const c3 = document.getElementById('c3');
+        const r4 = document.getElementById('r4');
+        const r5 = document.getElementById('r5');
+        const call = document.getElementById('call');
+        call.addEventListener('click',function(){
+                event.preventDefault();
+            l1.style.display = 'block';
+            l2.style.display = 'block';
+            c3.style.display = 'block';
+            r4.style.display = 'block';
+            r5.style.display = 'block';
+        })
+        
+    </script>
+
+    <!-- فونت وزیرمتن (اختیاری - برای زیبایی بیشتر) -->
+
+</body>
+</html>
